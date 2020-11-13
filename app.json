@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "My first React Native App.",
+    "githubUrl": "https://github.com/hausos/DoneWithIt"
   }
 }
