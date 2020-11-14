@@ -1,23 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Platform, StatusBar, Dimensions} from 'react-native';
+import {useDimensions, useDeviceOrientation} from '@react-native-community/hooks'
 
 export default function App() {
-  const handlePress = () => console.log("Text Pressed");
+  const { height, width } = useDimensions().window;
+  const landscape = width > height;
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}> Welcome to react native, I am and I want to make this text reallly long</Text>
-      <StatusBar style="auto" />
+    <SafeAreaView style={[styles.container, containerStyle]}>
+      <View style={{
+        backgroundColor: 'dodgerblue',
+        width: "100%",
+        height: landscape ? "100%" : "30%",
+      }}>
+
+      </View>
+
     </SafeAreaView>
   );
 }
 
+const containerStyle = {backgroundColor: 'orange'};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: "center",
-    alignItems: "center"
+    backgroundColor: 'white',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+
   },
 });
