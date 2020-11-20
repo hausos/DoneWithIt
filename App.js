@@ -7,10 +7,11 @@ import AppText from './app/components/AppText';
 
 import Card from './app/components/Card';
 import ListingDetailsScreen from './app/components/ListingDetailsScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 export default function App() {
   return (
-    <ViewImageScreen></ViewImageScreen>      
-  );
+    <MessagesScreen></MessagesScreen>
+    );
 }
 
