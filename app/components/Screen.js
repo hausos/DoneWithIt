@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
+import colors from '../config/colors';
 
 function Screen(props) {
     return (
@@ -13,6 +14,8 @@ function Screen(props) {
 const styles = StyleSheet.create({
     screen: {
         paddingTop: Constants.statusBarHeight,
+        backgroundColor: colors.light,
+        flex: 1,
 
     }
 })
