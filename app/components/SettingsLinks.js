@@ -12,7 +12,8 @@ function SettingsLinks({title, icon, iconColor, onPress}) {
     return (
         <TouchableHighlight
             underlayColor={colors.dark}
-            onPress={onPress}>
+            onPress={onPress}
+            >
 
             <View style={styles.wrapper}>
                 <RoundIcon icon={icon} iconColor={iconColor}/>

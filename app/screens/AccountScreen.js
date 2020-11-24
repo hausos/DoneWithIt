@@ -1,9 +1,8 @@
 import React from 'react';
 
 import Screen from '../components/Screen';
-import ListItem from '../components/ListItem';
+import {ListItem} from '../components/lists';
 import SettingsLinks from '../components/SettingsLinks';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import colors from '../config/colors';
 import { StyleSheet, View, FlatList } from 'react-native';
 
