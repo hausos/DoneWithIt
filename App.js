@@ -22,6 +22,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {BaseRouter, NavigationContainer, useNavigation} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 
 const Link = () => {
   const navigation = useNavigation();
@@ -64,8 +66,17 @@ const StackNavigator =() => (
   </Stack.Navigator>
 )
 
+const Home = () => (
+  <ListingsScreen></ListingsScreen>
+);
+
+
+const EditListing = () => (
+  <ListingEditScreen></ListingEditScreen>
+);
+
 const Account = () => (
-  <Screen><Text>Account</Text></Screen>
+  <AccountScreen></AccountScreen>
 );
 
 const Tab = createBottomTabNavigator();
@@ -80,7 +91,16 @@ const TabNavigator = () => (
   >
     <Tab.Screen
       name="Feed"
-      component={StackNavigator}
+      component={Home}
+      options={{
+        tabBarIcon: ({size, color}) => (
+          <MaterialCommunityIcons name="home" size={size} color={color} />
+        )
+      }}
+    />
+    <Tab.Screen
+      name="Edit Listing"
+      component={EditListing}
       options={{
         tabBarIcon: ({size, color}) => (
           <MaterialCommunityIcons name="home" size={size} color={color} />
@@ -101,8 +121,8 @@ const TabNavigator = () => (
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator />
+    <NavigationContainer theme={navigationTheme}>
+      <AuthNavigator />
     </NavigationContainer>
 
   );
