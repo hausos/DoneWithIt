@@ -21,7 +21,7 @@ import ListingEditScreen from './app/screens/ListingEditScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import {BaseRouter, NavigationContainer, useNavigation} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {MaterialComunityIcons} from '@expo/vector-icons';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 const Link = () => {
   const navigation = useNavigation();
@@ -80,9 +80,22 @@ const TabNavigator = () => (
   >
     <Tab.Screen
       name="Feed"
-      component={Tweets}
-      />
-    <Tab.Screen name="Account" component={Account}/>
+      component={StackNavigator}
+      options={{
+        tabBarIcon: ({size, color}) => (
+          <MaterialCommunityIcons name="home" size={size} color={color} />
+        )
+      }}
+    />
+    <Tab.Screen
+      name="Account"
+      component={Account}
+      options={{
+        tabBarIcon: ({size, color}) => (
+          <MaterialCommunityIcons name="account" size={size} color={color} />
+        )
+      }}
+    />
   </Tab.Navigator>
 )
 
