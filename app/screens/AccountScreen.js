@@ -5,6 +5,7 @@ import {ListItem} from '../components/lists';
 import SettingsLinks from '../components/SettingsLinks';
 import colors from '../config/colors';
 import { StyleSheet, View, FlatList } from 'react-native';
+import routes from '../navigation/routes';
 
 
 const menuItems = [
@@ -12,13 +13,13 @@ const menuItems = [
         title: 'My listing',
         icon: 'format-list-bulleted',
         iconColor: colors.primary,
-        targetScreen: "Messages",
+        targetScreen: routes.MESSAGES,
     },
     {
         title: 'My messages',
         icon: 'email',
         iconColor: colors.secondary,
-        targetScreen: "Messages",
+        targetScreen: routes.MESSAGES,
     },
 
 ]
@@ -29,7 +30,7 @@ function AccountScreen({navigation}) {
             <View style={styles.container}>
                 <ListItem
                     title='Aurora Makovac'
-                    subTitle='heeejjj jowwww'
+                    subTitle='I have a lot of things to sell'
                     image = {require('../assets/mosh.jpg')}
                 />
             </View>
