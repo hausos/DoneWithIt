@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
 import Screen from '../components/Screen';
-import {ListItem, ListItemSeparator, ListDeleteAction} from '../components/lists';
+import {ListItem, ListItemSeparator, ListItemDeleteAction} from '../components/lists';
 import colors from '../config/colors';
 
 
