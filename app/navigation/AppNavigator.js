@@ -6,6 +6,7 @@ import AccountScreen from '../screens/AccountScreen';
 import ListingEditScreen from '../screens/ListingEditScreen';
 import ListingsScreen from '../screens/ListingsScreen';
 import FeedNavigator from "./FeedNavigator";
+import AccountNavigator from "./AccountNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +32,7 @@ const AppNavigator = () => (
         />
         <Tab.Screen
             name="Account"
-            component={AccountScreen}
+            component={AccountNavigator}
             options={{
                 tabBarIcon: ({ color, size }) => (
                     <MaterialCommunityIcons name="account" color={color} size={size} />

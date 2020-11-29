@@ -12,16 +12,18 @@ const menuItems = [
         title: 'My listing',
         icon: 'format-list-bulleted',
         iconColor: colors.primary,
+        targetScreen: "Messages",
     },
     {
         title: 'My messages',
         icon: 'email',
         iconColor: colors.secondary,
+        targetScreen: "Messages",
     },
 
 ]
 
-function AccountScreen(props) {
+function AccountScreen({navigation}) {
     return (
         <Screen>
             <View style={styles.container}>
@@ -41,7 +43,7 @@ function AccountScreen(props) {
                             title={item.title}
                             icon={item.icon}
                             iconColor={item.iconColor}
-                            onPress={() => console.log()}
+                            onPress={() => navigation.navigate(item.targetScreen)}
                         />
                     }
                 ></FlatList>
